@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Layout from './pages/Layout'
+import Layout from './pages/LayOut'
 import DashBoard from './pages/DashBoard'
 import WriteArticle from './pages/WriteArticle'
 import BlogTitles from './pages/BlogTitles'
@@ -13,7 +13,7 @@ import Community from './pages/Community'
 import { useAuth } from '@clerk/clerk-react'
 import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast';
-import Layout from './pages/Layout';
+
 
 
 
