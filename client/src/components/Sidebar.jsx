@@ -21,9 +21,11 @@ const Sidebar = ({ sidebar, setsideBar }) => {
 
   return (
     <div
-      className={`w-60 bg-white flex flex-col justify-between h-full max-sm:absolute top-14 bottom-0
-      ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'} transition-all duration-300 ease-in-out`}
-    >
+  className={`w-60 bg-white flex flex-col justify-between h-full max-sm:absolute top-14 bottom-0
+  transform transition-all duration-300 ease-in-out
+  ${sidebar ? 'translate-x-0' : 'max-sm:-translate-x-full'}`}
+  >
+
 
       {/* --- Top Section (User + Nav Items) --- */}
       <div className="flex-1 overflow-y-auto">

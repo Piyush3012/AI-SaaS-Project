@@ -11,13 +11,13 @@ const Layout = () => {
   const { user } = useUser()
 
   return user ? (
-    <div className='flex flex-col items-start justify-start h-screen'>
+    <div className='flex flex-col h-screen'>
       {/* Navbar */}
-      <nav className='w-full px-8 min-h-14 flex items-center justify-between border-b border-gray-200'>
+      <nav className='w-full px-6 min-h-14 flex items-center justify-between border-b border-gray-200'>
         <img
           src={assets.logo}
           alt="logo"
-          className="cursor-pointer w-32 sm:w-44"
+          className="cursor-pointer w-28 sm:w-40"
           onClick={() => navigate('/')}
         />
         {sideBar ? (
@@ -33,18 +33,26 @@ const Layout = () => {
         )}
       </nav>
 
-      {/* Main Layout: Sidebar (left) + Dashboard (right) */}
-      <div
-        className='flex w-full flex-1'
-        style={{ height: "calc(100vh - 56px)" }} // navbar height adjustment
-      >
+      {/* Main Layout */}
+      <div className="flex w-full flex-1 h-[calc(100vh-56px)]">
         {/* Sidebar */}
-        <div className="w-64 border-r border-gray-200">
+        <div
+          className={`
+            ${sideBar ? "block" : "hidden"} 
+            sm:block 
+            w-64 border-r border-gray-200 bg-white
+          `}
+        >
           <Sidebar sidebar={sideBar} setsideBar={setSideBar} />
         </div>
 
         {/* Dashboard Content */}
-        <div className='flex-1 bg-[#F4F7FB] p-4 overflow-y-auto'>
+        <div
+          className={`
+            flex-1 bg-[#F4F7FB] p-4 overflow-y-auto
+            ${sideBar ? "hidden sm:block" : "block"}
+          `}
+        >
           <Outlet />
         </div>
       </div>
