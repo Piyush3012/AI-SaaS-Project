@@ -4,9 +4,9 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import { clerkMiddleware ,requireAuth} from '@clerk/express'
-import aiRouter from '../routes/aiRoutes.js';
-import connectCloudinary from '../config/cloudinary.js';
-import userRouter from '../routes/userRoutes.js';
+import aiRouter from './routes/aiRoutes.js';
+import connectCloudinary from './config/cloudinary.js';
+import userRouter from './routes/userRoutes.js';
 
 
 //create app using express function
